@@ -27,7 +27,7 @@ public class BallController : MonoBehaviour {
 		Debug.LogFormat ("collision is (0)",collision.gameObject.tag);
 		if(collision.gameObject.tag == "floor"){
 			countCollision++;
-			BallName.text = "floor : " + countCollision.ToString ();
+			BallName.text = "Count : " + countCollision.ToString ();
 		}
 		/*else if (collision.gameObject.tag == "Ceil"){
 			Destroy (this.gameObject);

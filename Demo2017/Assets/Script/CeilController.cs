@@ -15,7 +15,7 @@ public class CeilController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision) {
-		if (collision.gameObject.tag == "Cylinder"){
+		if (collision.gameObject.tag == "Ball"){
 			Destroy (collision.gameObject);
 		}
 	}

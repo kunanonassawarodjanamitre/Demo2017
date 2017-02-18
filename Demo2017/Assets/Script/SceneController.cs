@@ -8,10 +8,11 @@ public class SceneController : MonoBehaviour {
 
 	public Text txtScore;
 	public Text txtAttack;
+	public GameObject obtaclePrefab;
 
 	// Use this for initialization
 	void Start () {
-		
+		DoTestObatacle ();
 	}
 	
 	// Update is called once per frame
@@ -30,5 +31,15 @@ public class SceneController : MonoBehaviour {
 
 	public void DoChangeScene(){
 		SceneManager.LoadScene (1);
+	}
+	public void DoTestObatacle(){
+		StartCoroutine (GameProcess());
+	}
+
+	IEnumerator GameProcess(){
+		for (int i = 0; i <= 10; i++) {
+			Instantiate (obtaclePrefab);
+			yield return new WaitForSeconds (1);
+		}
 	}
 }

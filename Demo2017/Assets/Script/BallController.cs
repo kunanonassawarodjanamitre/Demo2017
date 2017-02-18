@@ -8,6 +8,7 @@ public class BallController : MonoBehaviour {
 	public Rigidbody rg;
 	public float speed;
 	public TextMesh BallName;
+	public GameObject BallEffectDiePrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +25,7 @@ public class BallController : MonoBehaviour {
 	
 	int countCollision = 0;
 	void OnCollisionEnter(Collision collision) {
-		Debug.LogFormat ("collision is (0)",collision.gameObject.tag);
+		Debug.LogFormat ("collision is {0}",collision.gameObject.tag);
 		if(collision.gameObject.tag == "floor"){
 			countCollision++;
 			BallName.text = "Count : " + countCollision.ToString ();
@@ -33,4 +34,9 @@ public class BallController : MonoBehaviour {
 			Destroy (this.gameObject);
 		}*/
 	}
+	void OnDestroy() {
+		GameObject dieEffect = Instantiate(BallEffectDiePrefab);
+		dieEffect.transform.position = this.gameObject.transform.position;
+	}
 }
+

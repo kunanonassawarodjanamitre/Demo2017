@@ -6,7 +6,7 @@ public class DialogController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		CloseDialog ();
 	}
 	
 	// Update is called once per frame
